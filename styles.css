@@ -1,0 +1,561 @@
+/* Deklarasi variabel warna */
+:root {
+  --primary0: #a855f7;
+  --primary0-dark: #9333ea;
+  --secondary0: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff;
+  
+	--primary: rgba(37, 37, 37, 1.0);
+	--secondary: rgba(252, 41, 74, 1.0);
+	--shades: rgba(238, 238, 238, 1.0);
+  
+  --max-width: 1200px;
+}
+
+/* Atur smooth scroll */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Reset style dan font */
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary0);
+}
+
+/* Atur tinggi beberapa section */
+.header,
+.gallery,
+.blog,
+.contact {
+  height: 90vh;
+}
+
+/* Posisi relatif untuk beberapa elemen */
+.header,
+.home,
+.gallery,
+.blog,
+.contact,
+.footer {
+  position: relative;
+}
+
+/* Posisi teks judul header dan footer */
+.header h1,
+.footer h1 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Style heading */
+h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  text-decoration: underline;
+}
+
+.footer h2 {
+  color: var(--extra-light);
+}
+
+/* Tambahkan simbol '#' sebelum heading */
+.home h1::before,
+.gallery h2::before,
+.blog h2::before,
+.contact h2::before,
+.footer h1::before {
+  content: '#';
+}
+
+/* Warna font header dan footer */
+.header h1,
+.footer h1 {
+  color: var(--primary0-dark);
+}
+
+/* Style footer */
+.footer {
+  height: 20vh;
+  background-color: var(--primary);
+}
+
+.contact-container {
+  max-width: var(--max-width);
+  padding: 1rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin-left: 2rem;
+}
+
+/* Background header */
+.header {
+  background-color: var(--primary);
+}
+
+/* Style navbar */
+.navbar {
+  /* padding-top: .5em;
+  padding-bottom: .5em; */
+  background-color: var(--primary0);
+  -webkit-box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
+  -moz-box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
+  box-shadow: 0 14px 14px -14px rgba(0, 0, 0, .75);
+}
+
+/* Atur sticky navbar saat scroll */
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Style logo */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--extra-light);
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: var(--primary0-dark);
+}
+
+/* Style navigasi */
+.nav__items {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin-left: 2rem;
+}
+
+.nav__link {
+  color: var(--shades);
+  text-decoration: none;
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.45em;
+}
+
+.brand a {
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  display: inline-block;
+  padding-top: .3125rem;
+  padding-bottom: .3125rem;
+  margin-right: 1rem;
+  line-height: inherit;
+}
+
+nav ul li {
+  margin-left: 0rem;
+}
+
+nav ul li a {
+  padding:  0.5rem;
+  font-weight: 600;
+  color: var(--primary0);
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: var(--primary0-dark);
+}
+
+/* Style navigasi hamburger untuk layar kecil */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary0);
+  margin: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav__items {
+  margin-top: 5px;
+}
+
+.brand .nav__link,
+.nav__items .nav__link {
+  padding: 10px 15px;
+  text-align: center;
+  display: block;
+  margin-left: 2rem;
+}
+
+.nav__items .nav__link {
+  color: var(--shades);
+  font-size: 0.99rem;
+}
+
+.nav__items .nav__link:hover {
+  color: var(--secondary);
+}
+
+/* Media query untuk layar besar */
+@media (min-width: 800px) {
+  .navbar,
+  .nav__items {
+    display: flex;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Media query untuk layar kecil */
+@media screen and (max-width: 799px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-color: var(--primary);
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  .nav .nav__items {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding-inline-start: 0;
+  }
+
+  .nav .nav__items .nav__item {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+
+  .nav .nav__items .nav__item:nth-child(1) a {
+    transition-delay: 0.2s;
+  }
+
+  .nav .nav__items .nav__item:nth-child(2) a {
+    transition-delay: 0.3s;
+  }
+
+  .nav .nav__items .nav__item:nth-child(3) a {
+    transition-delay: 0.4s;
+  }
+
+  .nav .nav__items .nav __item:nth-child(4) a {
+    transition-delay: 0.5s;
+  }
+
+  .nav .nav__items .nav__item:not(:first-child) {
+    margin-left: 0;
+  }
+
+  .nav .nav__items .nav__item .nav__link {
+    padding: 10px 25px;
+    opacity: 0;
+    color: var(--shades);
+    font-size: 24px;
+    font-weight: 600;
+    transform: translateY(-20px);
+    transition: all 0.2s ease;
+  }
+
+  .nav .nav__items .nav__item .nav__link:hover {
+    color: var(--secondary);
+  }
+
+  .nav__open {
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+  }
+
+  .nav__open i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--secondary);
+    border-radius: 2px;
+    margin-left: 14px;
+  }
+
+  .nav__open i:nth-child(1) {
+    margin-top: 16px;
+  }
+
+  .nav__open i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+  }
+
+  .nav__open i:nth-child(3) {
+    margin-top: 4px;
+  }
+}
+
+/* Style saat navigasi terbuka di layar kecil */
+#nav:checked + .nav__open {
+  transform: rotate(45deg);
+}
+
+#nav:checked + .nav__open i {
+  background-color: var(--shades);
+  transition: transform 0.2s ease;
+}
+
+#nav:checked + .nav__open i:nth-child(1) {
+  transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked + .nav__open i:nth-child(2) {
+  opacity: 0;
+}
+
+#nav:checked ~ .nav__item a {
+  display: block !important;
+}
+
+#nav:checked + .nav__open i:nth-child(3) {
+  transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked ~ .nav {
+  z-index: 9990;
+  opacity: 1;
+}
+
+#nav:checked ~ .nav ul li a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Style section */
+section {
+  padding: 10rem 1rem;
+}
+
+/* Style home section */
+.home-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 5rem;
+  margin: 0 auto; /* Konsisten dengan margin: 0 auto; */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 800;
+}
+
+.description {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 100%;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Ukuran gambar pada grid */
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Style artikel blog */
+article {
+  margin-bottom: 2rem;
+}
+
+article .title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+article .description a {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Style pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  background: var(--primary0);
+  border-radius: 999px;
+  box-shadow: var(--primary0-dark) 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.pagination button:disabled {
+  background-color: var(--text-light);
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: var(--primary0-dark);
+}
+
+.pagination .page-info {
+  margin: 0 1rem;
+  font-weight: 600;
+}
+
+/* Media query untuk layar kecil */
+@media (max-width: 768px) {
+  .home-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .image {
+    order: -1;
+  }
+
+  .image img {
+    max-width: 300px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animasi pada scroll */
+.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Style lightbox untuk galeri gambar */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* ukuran foto lightbox */
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
